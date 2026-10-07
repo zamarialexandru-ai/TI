@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Learning Spots Moldova — Locuri de studiu în Chișinău</title>
+<meta name="description" content="Găsește biblioteci, cafenele și alte locuri unde poți studia în Chișinău. Vezi programul, prețul, adresa și dacă studiul este permis.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:title" content="Learning Spots Chișinău — locuri de studiu în Chișinău">
+<meta property="og:description" content="Găsește biblioteci, cafenele și alte locuri unde poți studia în Chișinău. Vezi programul, prețul, adresa și dacă studiul este permis.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{paper:'var(--bg)',card:'var(--card)',ink:'var(--ink)',muted:'var(--muted)',line:'var(--line)',brand:'var(--brand)',soft:'var(--soft)'},fontFamily:{sans:['Manrope','system-ui','Segoe UI','sans-serif']}}}};
+</script>
+<style>
+:root{color-scheme:light;--bg:#eef6f3;--card:#fff;--ink:#16323a;--muted:#587178;--line:#d3e4df;--brand:#2b7a74;--onbrand:#fff;--soft:#dcefe9;
+--okbg:#d9f0e3;--okfg:#1d6b45;--wbg:#fbefd2;--wfg:#7a5513;--ibg:#dfeaf7;--ifg:#2f5d8f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111d1e;--card:#182a2b;--ink:#e3efed;--muted:#94afab;--line:#2a3f3e;--brand:#6fc9bd;--onbrand:#0d2321;--soft:#223a39;--okbg:#1d3b2d;--okfg:#7fdcab;--wbg:#3d3319;--wfg:#ebc470;--ibg:#1f3149;--ifg:#8fbaee}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111d1e;--card:#182a2b;--ink:#e3efed;--muted:#94afab;--line:#2a3f3e;--brand:#6fc9bd;--onbrand:#0d2321;--soft:#223a39;--okbg:#1d3b2d;--okfg:#7fdcab;--wbg:#3d3319;--wfg:#ebc470;--ibg:#1f3149;--ifg:#8fbaee}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem)}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,'Segoe UI',sans-serif;line-height:1.55}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.55rem 1rem;border-radius:.8rem;font-weight:700;background:var(--brand);color:var(--onbrand);transition:filter .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--brand);border:1.5px solid var(--line)}
+.btn-ghost:hover{background:var(--soft);filter:none}
+.sel{width:100%;min-height:44px;border-radius:.7rem;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:.5rem .7rem;font-size:1rem}
+.badge{display:inline-block;border-radius:999px;padding:.15rem .6rem;font-size:.72rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.b-ok{background:var(--okbg);color:var(--okfg)}.b-w{background:var(--wbg);color:var(--wfg)}.b-i{background:var(--ibg);color:var(--ifg)}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:1.25rem;padding:0;width:min(92vw,34rem);max-height:88vh;overflow:auto}
+dialog::backdrop{background:rgba(10,25,26,.55)}
+.card{animation:in .35s ease both}@keyframes in{from{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.card{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="sticky z-30 border-b border-line bg-card" style="top:env(safe-area-inset-top,0px)">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+    <a href="#top" class="flex items-center gap-2 text-lg font-extrabold"><span aria-hidden="true">📚</span><span>Learning Spots <span class="hidden text-brand sm:inline">Chișinău</span></span></a>
+    <button type="button" class="btn btn-ghost" data-suggest>Sugerează o locație</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="mx-auto max-w-6xl px-4 pb-6 pt-10 sm:pt-16">
+    <h1 class="max-w-2xl text-4xl font-extrabold leading-tight sm:text-5xl">Găsește-ți locul de studiu.</h1>
+    <p class="mt-3 max-w-xl text-lg text-muted">Descoperă biblioteci, cafenele și alte spații unde poți învăța în Chișinău.</p>
+    <p class="mt-1 max-w-xl text-muted">Găsește locul potrivit pentru următoarea sesiune de studiu.</p>
+    <div class="mt-6 flex max-w-3xl flex-col gap-3 sm:flex-row" role="search">
+      <label for="q" class="sr-only">Caută o locație, o stradă sau un tip de spațiu</label>
+      <input id="q" type="search" autocomplete="off" placeholder="Caută o locație, o stradă sau un tip de spațiu..." class="min-h-[52px] w-full rounded-2xl border border-line bg-card px-5 text-base text-ink placeholder:text-muted">
+      <button id="go" type="button" class="btn sm:px-8">Caută</button>
+    </div>
+  </section>
+
+  <section id="locatii" class="mx-auto max-w-6xl px-4 pb-12" aria-labelledby="h-loc">
+    <h2 id="h-loc" class="sr-only">Locații de studiu</h2>
+    <button id="ftoggle" type="button" class="btn btn-ghost mb-3 w-full sm:hidden" aria-expanded="false" aria-controls="filters">Filtre și sortare</button>
+    <div id="filters" class="mb-4 hidden grid-cols-2 gap-3 sm:grid lg:grid-cols-5">
+      <label class="text-sm font-semibold">Tip<select id="f-type" class="sel mt-1"><option value="all">Toate</option><option value="biblioteca">Biblioteci</option><option value="cafenea">Cafenele</option><option value="coworking">Coworking</option><option value="alt">Alte spații</option></select></label>
+      <label class="text-sm font-semibold">Cost<select id="f-cost" class="sel mt-1"><option value="all">Toate</option><option value="free">Gratuit</option><option value="20">Sub 20 Lei</option><option value="50">Sub 50 Lei</option><option value="50+">50+ Lei</option></select></label>
+      <label class="text-sm font-semibold">Studiu permis<select id="f-study" class="sel mt-1"><option value="all">Toate</option><option value="da">Da</option><option value="nu">Nu / Necunoscut</option></select></label>
+      <label class="text-sm font-semibold">Ora de închidere<select id="f-close" class="sel mt-1"><option value="all">Oricând</option><option value="18">Până la 18:00</option><option value="20">Până la 20:00</option><option value="22">Până la 22:00</option><option value="late">După 22:00</option></select></label>
+      <label class="col-span-2 text-sm font-semibold lg:col-span-1">Sortează după<select id="f-sort" class="sel mt-1"><option value="rec">Recomandate</option><option value="cheap">Cele mai ieftine</option><option value="late">Închid cel mai târziu</option><option value="near">Cele mai apropiate</option><option value="abc">Alfabetic</option></select></label>
+    </div>
+    <p id="status" class="mb-4 text-sm text-muted" aria-live="polite"></p>
+    <p class="mb-5 rounded-xl bg-soft px-4 py-3 text-sm">Lista pornește cu puține locații, iar multe detalii sunt încă „Necunoscut”. Nu afișăm informații neverificate ca fiind sigure — <button type="button" class="font-bold text-brand underline" data-suggest>sugerează o locație</button> ca să o completăm.</p>
+    <div id="grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+    <div id="empty" hidden class="mx-auto max-w-md py-12 text-center">
+      <p class="text-4xl" aria-hidden="true">🔍</p>
+      <p class="mt-3 text-lg font-bold">Nu am găsit locații care corespund căutării tale.</p>
+      <p class="mt-1 text-muted">Încearcă un alt nume, o stradă sau un tip de locație.</p>
+      <button id="reset" type="button" class="btn mt-5">Șterge căutarea și filtrele</button>
+    </div>
+    <p class="mt-8 text-center text-sm text-muted">Informațiile pot varia. Verifică programul și regulile locației înainte de a merge.</p>
+  </section>
+</main>
+
+<footer class="border-t border-line bg-card">
+  <div class="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2">
+    <div>
+      <p class="text-lg font-extrabold">Learning Spots</p>
+      <p class="text-muted">Găsește un loc bun. Învață mai bine.</p>
+      <p class="mt-3 max-w-md text-sm text-muted"><strong>Despre proiect:</strong> Learning Spots Chișinău — locuri de studiu în Chișinău. Un director gratuit, fără cont, pentru elevi și studenți.</p>
+    </div>
+    <div class="text-sm">
+      <nav class="flex flex-wrap gap-x-5 gap-y-2 font-semibold text-brand" aria-label="Footer">
+        <a href="#top">Despre proiect</a><a id="contact" href="#">Contact</a><button type="button" data-suggest class="font-semibold">Sugerează o locație</button>
+      </nav>
+      <p class="mt-3 text-muted"><strong>Disclaimer:</strong> Learning Spots nu garantează disponibilitatea locurilor, programul sau regulile comerciale ale locațiilor. Verifică informațiile înainte de vizită.</p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="detail" aria-labelledby="d-title"><div id="d-body" class="p-6"></div></dialog>
+
+<dialog id="suggest" aria-labelledby="s-title">
+  <form id="sform" class="space-y-3 p-6">
+    <h2 id="s-title" class="text-xl font-extrabold">Sugerează o locație</h2>
+    <p class="text-sm text-muted">Se deschide aplicația ta de email cu datele completate. Nu salvăm nimic pe un server.</p>
+    <label class="block text-sm font-semibold">Numele locației<input name="Nume" required class="sel mt-1"></label>
+    <label class="block text-sm font-semibold">Adresa<input name="Adresa" class="sel mt-1"></label>
+    <div class="grid grid-cols-2 gap-3">
+      <label class="block text-sm font-semibold">Tipul locației<select name="Tip" class="sel mt-1"><option>Bibliotecă</option><option>Cafenea</option><option>Coworking</option><option>Alt spațiu</option></select></label>
+      <label class="block text-sm font-semibold">Este permis studiul?<select name="Studiu permis" class="sel mt-1"><option>Nu știu</option><option>Da</option><option>Nu</option></select></label>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <label class="block text-sm font-semibold">Program<input name="Program" class="sel mt-1"></label>
+      <label class="block text-sm font-semibold">Cost<input name="Cost" class="sel mt-1"></label>
+    </div>
+    <label class="block text-sm font-semibold">Link Google Maps<input name="Google Maps" type="url" class="sel mt-1"></label>
+    <label class="block text-sm font-semibold">Observații<textarea name="Observații" rows="3" class="sel mt-1"></textarea></label>
+    <div class="flex gap-3 pt-2"><button class="btn flex-1" type="submit">Trimite pe email</button><button class="btn btn-ghost" type="button" data-close>Anulează</button></div>
+  </form>
+</dialog>
+
+<script>
+// Înlocuiește adresa înainte de publicare.
+const CONTACT_EMAIL='contact@example.com';
+const TYPES={biblioteca:{label:'Bibliotecă',words:'carti lectura'},cafenea:{label:'Cafenea',words:'coffee cafea ceai'},coworking:{label:'Coworking',words:'birou'},alt:{label:'Alt spațiu',words:''}};
+const STUDY={oficial:['Da','Studiu permis oficial.'],probabil:['Probabil','Poți probabil studia aici, dar nu există o politică publică verificabilă.'],necunoscut:['Necunoscut','Verifică la locație.']};
+// Model de date: câmp necunoscut = null. Adaugă locații noi aici (lat/lng activează sortarea „Cele mai apropiate”).
+const LOCS=[
+ {id:'hasdeu',name:'Biblioteca Municipală „B.P. Hașdeu”',type:'biblioteca',address:'bd. Ștefan cel Mare 148',close:'19:00',hours:null,cost:0,costLabel:'Gratuit',study:'oficial',certainty:'Neverificat (date de pornire)',notes:'Date preluate din specificația proiectului. Verifică programul complet și condițiile de acces.',lat:null,lng:null},
+ {id:'bnrm',name:'Biblioteca Națională a Republicii Moldova',type:'biblioteca',address:'str. 31 August 1989, 78A',close:null,hours:null,cost:null,costLabel:null,study:'probabil',certainty:'Neverificat',notes:'Accesul în sălile de lectură poate cere înscriere. Programul și costul nu sunt confirmate.',lat:null,lng:null},
+ {id:'granier',name:'Granier',type:'cafenea',address:null,close:null,hours:null,cost:null,costLabel:null,study:'probabil',certainty:'Neverificat',notes:'Intrare de început: tipul, adresa și programul trebuie confirmate. Dacă vrei să lucrezi mult timp, întreabă personalul.',lat:null,lng:null}
+];
+
+const $=id=>document.getElementById(id);
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const mins=t=>t?+t.slice(0,2)*60+ +t.slice(3):null;
+const q=encodeURIComponent;
+const place=l=>q([l.name,l.address,'Chișinău'].filter(Boolean).join(', '));
+const mapUrl=l=>'https://www.google.com/maps/search/?api=1&query='+place(l);
+const navUrl=l=>'https://www.google.com/maps/dir/?api=1&destination='+place(l);
+const costText=l=>l.cost===0?'Gratuit':l.costLabel||(l.type==='cafenea'?'Consumație (sumă minimă neconfirmată)':'Necunoscut — verifică la locație');
+const badge=l=>l.cost===0?'<span class="badge b-ok">GRATUIT</span>':(l.type==='cafenea'&&l.cost===null?'<span class="badge b-w">CONSUMAȚIE</span>':'');
+let pos=null;
+
+const COST={free:c=>c===0,'20':c=>c!==null&&c<20,'50':c=>c!==null&&c<50,'50+':c=>c!==null&&c>=50};
+const CLOSE={'18':m=>m>=1080,'20':m=>m>=1200,'22':m=>m>=1320,late:m=>m>1320}; // „deschis cel puțin până la…”
+const km=(a,b,c,d)=>{const r=x=>x*Math.PI/180,h=Math.sin(r(c-a)/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(r(d-b)/2)**2;return 12742*Math.asin(Math.sqrt(h))};
+const dist=l=>pos&&l.lat!=null?km(pos.lat,pos.lng,l.lat,l.lng):null;
+const last=(a,b,f)=>a===null?(b===null?0:1):b===null?-1:f(a,b);
+
+function list(){
+  const terms=norm($('q').value).split(/\s+/).filter(Boolean),t=$('f-type').value,c=$('f-cost').value,s=$('f-study').value,cl=$('f-close').value;
+  const r=LOCS.filter(l=>{
+    const hay=norm([l.name,l.address||'',TYPES[l.type].label,TYPES[l.type].words].join(' '));
+    return terms.every(w=>hay.includes(w))&&(t==='all'||l.type===t)&&(c==='all'||COST[c](l.cost))
+      &&(s==='all'||(s==='da')===(l.study==='oficial'))&&(cl==='all'||(l.close&&CLOSE[cl](mins(l.close))));
+  });
+  const o=$('f-sort').value,f={rec:()=>0,abc:(a,b)=>a.name.localeCompare(b.name,'ro'),
+    cheap:(a,b)=>last(a.cost,b.cost,(x,y)=>x-y),late:(a,b)=>last(mins(a.close),mins(b.close),(x,y)=>y-x),near:(a,b)=>last(dist(a),dist(b),(x,y)=>x-y)}[o];
+  return r.sort(f);
+}
+
+const row=(i,h)=>`<div class="flex gap-2.5"><span aria-hidden="true">${i}</span><span>${h}</span></div>`;
+const card=l=>{const d=dist(l),st=STUDY[l.study];return `
+<article class="card flex flex-col rounded-2xl border border-line bg-card p-5 shadow-sm transition hover:shadow-md">
+  <div class="flex items-start justify-between gap-3"><div><h3 class="text-lg font-bold leading-snug">${l.name}</h3><p class="text-sm text-muted">${TYPES[l.type].label}</p></div>${badge(l)}</div>
+  <div class="mt-4 flex-1 space-y-2.5 text-[0.95rem]">
+    ${row('📍',(l.address||'Adresă de verificat')+(d!==null?` <span class="text-muted">· ${d.toFixed(1)} km</span>`:''))}
+    ${row('🕐',l.close?'Deschis până la '+l.close:'Program necunoscut')}
+    ${row('📚','Studiu permis: <strong>'+st[0]+'</strong>')}
+    ${row('💰','<strong>'+costText(l)+'</strong>')}
+  </div>
+  <div class="mt-5 flex gap-2"><button type="button" class="btn flex-1" data-detail="${l.id}">Vezi detalii</button><a class="btn btn-ghost flex-1" href="${mapUrl(l)}" target="_blank" rel="noopener">Google Maps</a></div>
+</article>`};
+
+function render(){
+  const r=list();
+  $('grid').innerHTML=r.map(card).join('');
+  $('empty').hidden=r.length>0;
+  const base=r.length+(r.length===1?' locație găsită':' locații găsite');
+  $('status').textContent=$('f-sort').value==='near'&&pos&&!LOCS.some(l=>l.lat!=null)?base+' · Distanța apare după ce locațiile au coordonate.':base;
+}
+
+function detail(id){
+  const l=LOCS.find(x=>x.id===id),st=STUDY[l.study];
+  $('d-body').innerHTML=`
+  <div class="flex items-start justify-between gap-3"><div><h2 id="d-title" class="text-xl font-extrabold leading-snug">${l.name}</h2><p class="text-muted">${TYPES[l.type].label}</p></div>${badge(l)}</div>
+  <dl class="mt-4 space-y-3 text-[0.95rem]">
+    <div><dt class="font-bold">📍 Adresă</dt><dd>${l.address||'Adresă de verificat'}</dd></div>
+    <div><dt class="font-bold">🕐 Program</dt><dd>${l.hours||(l.close?'Deschis până la '+l.close+'. Programul complet: necunoscut — verifică la locație.':'Necunoscut — verifică la locație.')}</dd></div>
+    <div><dt class="font-bold">💰 Cost</dt><dd>${costText(l)}</dd></div>
+    <div><dt class="font-bold">📚 Studiu permis: ${st[0]}</dt><dd>${st[1]}</dd></div>
+    <div><dt class="font-bold">📝 Observații</dt><dd>${l.notes||'—'}</dd></div>
+    <div><dt class="font-bold">Nivel de certitudine</dt><dd><span class="badge b-i">${l.certainty}</span></dd></div>
+  </dl>
+  <div class="mt-6 flex flex-wrap gap-2"><a class="btn" href="${mapUrl(l)}" target="_blank" rel="noopener">Vezi pe hartă</a><a class="btn btn-ghost" href="${navUrl(l)}" target="_blank" rel="noopener">Navighează</a><button type="button" class="btn btn-ghost ml-auto" data-close>Închide</button></div>`;
+  $('detail').showModal();
+}
+
+['q','f-type','f-cost','f-study','f-close'].forEach(i=>$(i).addEventListener('input',render));
+$('f-sort').addEventListener('change',()=>{
+  if($('f-sort').value!=='near')return render();
+  if(!navigator.geolocation){$('f-sort').value='rec';render();$('status').textContent='Browserul nu oferă geolocalizare — lista rămâne neschimbată.';return}
+  navigator.geolocation.getCurrentPosition(p=>{pos={lat:p.coords.latitude,lng:p.coords.longitude};render()},
+    ()=>{$('f-sort').value='rec';render();$('status').textContent='Fără acces la locația ta, lista rămâne în ordinea recomandată. Poți folosi site-ul normal.'},{timeout:8000});
+});
+$('go').addEventListener('click',()=>{render();$('locatii').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});
+$('q').addEventListener('keydown',e=>{if(e.key==='Enter')$('go').click()});
+$('reset').addEventListener('click',()=>{$('q').value='';['f-type','f-cost','f-study','f-close'].forEach(i=>$(i).selectedIndex=0);render();$('q').focus()});
+$('ftoggle').addEventListener('click',e=>{const f=$('filters'),o=f.classList.toggle('hidden')===false;e.target.setAttribute('aria-expanded',o);f.classList.toggle('grid',o)});
+$('grid').addEventListener('click',e=>{const b=e.target.closest('[data-detail]');if(b)detail(b.dataset.detail)});
+document.addEventListener('click',e=>{
+  if(e.target.closest('[data-suggest]'))$('suggest').showModal();
+  if(e.target.closest('[data-close]'))e.target.closest('dialog').close();
+  if(e.target.tagName==='DIALOG')e.target.close();
+});
+$('contact').href='mailto:'+CONTACT_EMAIL+'?subject='+q('Learning Spots Chișinău');
+$('sform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const body=[...new FormData(e.target)].map(([k,v])=>k+': '+(v||'—')).join('\n');
+  location.href='mailto:'+CONTACT_EMAIL+'?subject='+q('Sugestie locație — Learning Spots Chișinău')+'&body='+q(body);
+  $('suggest').close();
+});
+render();
+</script>
+</body>
+  </html>
+  
